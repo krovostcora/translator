@@ -19,20 +19,39 @@
             <!-- опції заповнюються з JS -->
         </select>
     </div>
-    <textarea id="inputText" class="w-full border p-2 mb-4"></textarea>
-    <button id="translateBtn" class="bg-blue-500 text-white px-4 py-2">Translate</button>
-    <div id="translatedText" class="mt-4">
-        <textarea id="translatedTextField" class="w-full border p-2 mb-4 bg-gray-200" readonly></textarea>
+    <!-- index.html -->
+    <div style="margin-bottom: 1em;">
+        <textarea id="inputText" class="w-full border p-2 mb-4"></textarea>
+        <button id="translateBtn" class="bg-blue-500 text-white px-4 py-2">Translate</button>
+
+        <!--        <input id="inputText" type="text" placeholder="Enter text..." style="width: 100%;" />-->
+<!--        <button id="translateBtn">Translate</button>-->
     </div>
+    <div style="display: flex; gap: 2em;">
+        <div style="flex: 1;">
+            <h3>Original</h3>
+            <div id="originalText" style="border: 1px solid #ccc; min-height: 2em; padding: 0.5em;"></div>
+            <div id="highlightedListOriginal" style="margin-top:1em;"></div>
+        </div>
+        <div style="flex: 1;">
+            <h3>Translation</h3>
+            <div id="translatedText" style="border: 1px solid #ccc; min-height: 2em; padding: 0.5em;"></div>
+            <div id="highlightedListTranslated" style="margin-top:1em;"></div>
+        </div>
+    </div>
+    <style>
+        .highlighted { background: #ffe066; }
+        .word-span { cursor: pointer; padding: 0 2px; }
+    </style>
 
     <div>
         <h2 class="text-xl font-semibold">Selected Words</h2>
         <ul id="wordList" class="list-disc list-inside"></ul>
     </div>
+    <button id="clearBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Clear</button>
+    <button id="exportExcelBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" >Export to Excel</button>
+    <script type="module" src="./script.js"></script>
 
-    <button id="exportBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-        Export to Excel
-    </button>
 </div>
 
 <script src="script.js"></script>
