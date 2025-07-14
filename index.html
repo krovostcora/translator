@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Translator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-$END$
+<body class="bg-gray-100 text-gray-900 p-6">
+
+<div class="max-w-4xl mx-auto space-y-6">
+    <h1 class="text-2xl font-bold">Smart Translator</h1>
+
+    <div class="space-y-2">
+        <label for="level" class="block font-medium">Your Level:</label>
+        <select id="level" class="border rounded p-2">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+        </select>
+    </div>
+    <div class="flex gap-4 mb-4">
+        <select id="sourceLang" class="border p-2">
+            <!-- опції заповнюються з JS -->
+        </select>
+        <select id="targetLang" class="border p-2">
+            <!-- опції заповнюються з JS -->
+        </select>
+    </div>
+    <textarea id="inputText" class="w-full border p-2 mb-4"></textarea>
+    <button id="translateBtn" class="bg-blue-500 text-white px-4 py-2">Translate</button>
+    <div id="translatedText" class="mt-4">
+        <textarea id="translatedTextField" class="w-full border p-2 mb-4 bg-gray-200" readonly></textarea>
+    </div>
+
+    <div>
+        <h2 class="text-xl font-semibold">Selected Words</h2>
+        <ul id="wordList" class="list-disc list-inside"></ul>
+    </div>
+
+    <button id="exportBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        Export to Excel
+    </button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
